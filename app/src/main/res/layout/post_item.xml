@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.ags.annada.userposts.posts.PostsViewModel" />
+
+        <variable
+            name="post"
+            type="com.ags.annada.userposts.datasource.room.entities.Post" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/white"
+        android:onClick="@{() -> viewmodel.openPost(post.id)}"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_post_title"
+            style="@style/defaultTextView"
+            android:layout_marginTop="@dimen/post_title_margin_top"
+            android:maxLines="1"
+            android:text="@{post.title}"
+            android:textSize="@dimen/post_title_font_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Lorem ipsum dolor sit amet" />
+
+        <TextView
+            android:id="@+id/tv_post_body"
+            style="@style/defaultTextView"
+            android:layout_marginTop="@dimen/post_body_margin_top"
+            android:maxLines="6"
+            android:text="@{post.body}"
+            android:textSize="@dimen/post_body_font_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_post_title"
+            tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada tincidunt mauris, vel consectetur leo rhoncus eu. Morbi pulvinar, risus et aliquet pharetra, mi libero tristique nunc, sed dapibus tortor justo eget tortor. Maecenas posuere aliquet leo, eu convallis augue luctus sodales." />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

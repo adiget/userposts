@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">UserPosts</string>
+    <string name="retry">Retry</string>
+    <string name="loading_error">An error occurred while loading the posts</string>
+    <string name="loading_posts_error">Error while loading posts</string>
+    <string name="loading_comments_error">Error while loading comments</string>
+    <string name="loading_error_comments">An error occurred while loading the comments</string>
+    <string name="no_more_error">No more data</string>
+    <string name="no_posts_all">You have no posts!</string>
+    <string name="no_comments_all">You have no comments!</string>
+</resources>

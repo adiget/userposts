@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/posts_fragment_dest">
+
+    <fragment
+        android:id="@+id/posts_fragment_dest"
+        android:name="com.ags.annada.userposts.posts.PostsFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/posts_frag">
+        <action
+            android:id="@+id/action_postsFragment_to_commentsFragment"
+            app:destination="@id/comments_fragment_dest" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/comments_fragment_dest"
+        android:name="com.ags.annada.userposts.comments.CommentsFragment"
+        android:label="Comments">
+        <argument
+            android:name="postId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_commentsFragment_to_postWithUserFragment"
+            app:destination="@id/posts_fragment_dest" />
+    </fragment>
+</navigation>
